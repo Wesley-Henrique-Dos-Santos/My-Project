@@ -1,0 +1,44 @@
+.contato{
+    width: 100%;
+    height: 900px;
+    @include d-flex(center,center);
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    h1{
+        text-align: center;
+        font-size: 5rem;
+        padding: 1rem;
+        color: $secondaryColor;
+    }
+    h2{
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: $colorLight;
+        padding: 2rem 0;
+    }
+}
+
+.whatsContato{
+    width: 100%;
+    font-size: 2rem;
+    padding: 2rem;
+    color: #fff;
+    background-color: #00a884;
+}
+
+.emailContato{
+    max-width: 600px;
+    padding: 2rem;
+    width: 100%;
+    background-color: $colorLight;
+    p{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    span{
+        font-size: 1.4rem;
+        color: $colorDark;
+        font-weight: bold;
+    }
+}

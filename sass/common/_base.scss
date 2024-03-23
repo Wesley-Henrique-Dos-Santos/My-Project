@@ -1,0 +1,50 @@
+@import 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html{
+     font-family: 'Roboto', sans-serif;
+     font-size: 62.5%;
+     
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+    background-color: $colorDark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ccc;
+  }
+
+  @keyframes animeZoom{
+    0%{
+      transform: scale(0.9);
+    }
+    100%{
+      transform: scale(1.1);
+    }
+  }
+
+  #whatsapp{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    animation-name: animeZoom;
+    animation-duration: 1s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    z-index: 99;
+    a{
+      font-size: 5rem;
+      color: #25d366;
+    }
+  }
+  
+
+ 

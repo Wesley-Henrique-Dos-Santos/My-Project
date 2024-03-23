@@ -1,0 +1,13 @@
+        // --------------- Funções -------------------
+
+        @mixin container(){
+            width: 100%;
+            max-width: 1480px;
+            margin: 0 auto;
+        }
+
+        @mixin d-flex($spaceContent,$alighItems){
+            display: flex;
+            align-items: $alighItems;
+            justify-content: $spaceContent;
+        }

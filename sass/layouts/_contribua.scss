@@ -1,0 +1,112 @@
+.contribua{
+    background-color: #fff;
+    h3{
+        font-size: 3rem;
+        color: $colorDark;
+        padding: 2rem;
+    }
+}
+
+.box_obra{
+    @include d-flex(space-between,center);
+}
+
+.ajudarObra{
+    text-align: center;
+    width: 50%;
+    h2{
+        font-size: 5rem;
+        padding: 2rem 0;
+        text-transform: uppercase;
+    }
+    p{
+        margin: 0 auto;
+        width: 80%;
+        font-size: 2.1rem;
+        b{
+            font-size: 2.5rem;
+        }
+    }
+
+    .conta_bancaria{
+        overflow-y: hidden;
+        img{
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+
+    .pix{
+        padding: 2rem;
+        @include d-flex(center,center);
+        img{
+            width: 100px;
+            background-color: aliceblue;
+            padding: 1rem;
+            margin: 0 1rem;
+        }
+        label{
+            font-size: 2rem;
+            color: $primaryColor;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        #copyPix{
+            font-size: 2rem;
+            margin: 1rem;
+            color: blue;
+            border: 0;
+            pointer-events: none;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    #copyPix{
+        cursor: pointer;
+    }
+}
+
+.img_obra{
+    position: relative;
+    width: 50%;
+    height: 1100px;
+    filter: grayscale(1);
+    background-position: center;
+    background-image: url('../images/igreja.jpeg'); 
+}
+
+.cover_obra{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #b8b8b830;
+}
+
+@media screen and (max-width:1280px){
+    .pix{
+        width: 100%;
+        flex-direction: column;
+        label{
+            margin: 2rem 0;
+        }
+        #copyPix{
+            font-size: 4rem;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .ajudarObra{
+        width: 100%;
+    }
+    .box_obra{
+        flex-direction: column;
+    }
+    .img_obra{
+        width: 100%;
+    }
+}

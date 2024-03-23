@@ -1,0 +1,86 @@
+footer{
+    background-color: $colorDark;
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    @include d-flex(space-evenly,center);
+    padding: 2rem;
+    span:nth-last-child(2){
+        color: $colorLight;
+        font-size: 2.2rem;
+        position: absolute;
+        bottom: 0.5rem;
+    }
+    #author{
+        color: $colorLight;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}
+
+.endereco{
+    color: $colorLight;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+    p{
+        font-size: 2.5rem;
+        font-weight: normal;
+    }
+    
+}
+
+.box_map{
+    margin-bottom: 2rem;
+}
+
+.redesSociaisFooter{
+    position: absolute;
+    top: 1rem;
+    @include d-flex(center,center);
+    gap: 1rem;
+    span{
+        color: #fff;
+        font-size: 2rem;
+    }
+    a{
+        color: $colorLight;
+        font-size: 2.5rem;
+        &:hover{
+            color: $secondaryColor;
+        }
+    }
+
+}
+
+@media screen and (max-width:1280px){
+    footer{
+        flex-direction: column;
+    }
+
+    .endereco{
+        p{
+            margin: 1rem 0;
+        }
+    }
+
+    .box_map{
+        position: relative;
+    }
+
+    #author{
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width:520px){
+    .box_map{
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width:280px){
+    .box_map{
+        transform: scale(0.5);
+    }
+}

@@ -1,0 +1,81 @@
+.call_header{
+    background-image: url('https://churchtechexpo.com.br/wp-content/uploads/2019/04/carolina-jacomin-615796-unsplash.jpg');
+    height: 1000px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    @include d-flex(center,center);
+    width: 100%;
+}
+
+.calls{
+    width: 95%;
+    overflow-y: hidden;
+    text-align: center;
+    position: relative;
+    padding: 4rem 0;
+    h1{
+        color: #fff;
+        font-size: 12rem;
+        padding: 2rem 0;
+        b{
+            color: $secondaryColor;
+        }
+    }
+
+    p{
+        color: $secondaryColor;
+        font-size: 6rem;
+        width: 100%;
+        padding: 2rem 0;
+        strong{
+            color: #fff;
+        }
+    }
+}
+
+.cover_bg{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $colorDark;
+    height: 100%;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 1280px){
+    .calls{
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .calls{
+        h1{
+            font-size: 9rem;
+        }
+
+        p{
+            font-size: 4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 468px){
+    .call_header{
+        height: 900px;
+    }
+    .calls{
+        h1{
+            font-size: 6rem;
+        }
+
+        p{
+            font-size: 2.5rem;
+        }
+    }
+}

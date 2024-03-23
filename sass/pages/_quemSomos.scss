@@ -1,0 +1,68 @@
+.box_somos{
+    @include d-flex(center,center);
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto;
+    gap: 1rem;
+    min-height: 1300px;
+    background-color: #fff;
+    h1{
+        display: block;
+        text-align: center;
+        font-size: 4rem;
+        padding: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $secondaryColor;
+    }
+    img{
+        width: 320px;
+        background-color: $secondaryColor;
+        padding: 4px;
+        margin: 1rem 0;
+    }
+    p{
+        font-size: 2rem;
+        color: $colorLight;
+        width: 100%;
+        text-align: justify;
+        b{
+            font-size: 2.5rem;
+            color: $primaryColor;
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .box_somos{
+        min-height: 1250px;
+        h1{
+            font-size: 3rem;
+        }
+        img{
+            width: 250px;
+            margin: 0 auto;
+        }
+        p{
+            font-size: 1.7rem;
+            text-align: justify;
+        }
+    }
+}
+
+@media screen and (max-width:480px){
+    .box_somos{
+        min-height: 1350px;
+        img{
+            width: 220px;
+            margin: 0 auto;
+        }
+    }    
+}
+
+@media screen and (max-width:375px){
+    .box_somos{
+        min-height: 1430px;
+    }    
+}

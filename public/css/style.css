@@ -1,0 +1,764 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  background-color: #393939;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+@keyframes animeZoom {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+#whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  animation-name: animeZoom;
+  animation-duration: 1s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  z-index: 99;
+}
+#whatsapp a {
+  font-size: 5rem;
+  color: #25d366;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #393939;
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+}
+
+.bars {
+  display: none;
+}
+
+.logo {
+  cursor: pointer;
+  transition: 1s;
+}
+.logo:hover {
+  transform: scale(0.9);
+}
+.logo img {
+  width: 140px;
+  border-radius: 50%;
+  border: 3px solid #e7d78c;
+}
+
+.menuDesktop ul {
+  display: flex;
+  list-style-type: none;
+  gap: 5rem;
+}
+.menuDesktop ul li:hover a {
+  color: #fff;
+  border-bottom: 2px solid #e7d78c;
+}
+.menuDesktop ul .active a {
+  color: #fff;
+  border-bottom: 2px solid #e7d78c;
+}
+.menuDesktop ul a {
+  font-size: 2.2rem;
+  color: #b8b8b8;
+  text-decoration: none;
+}
+
+.menuMobile {
+  display: none;
+}
+
+.redes_sociais div a {
+  color: #b8b8b8;
+  font-size: 2.5rem;
+}
+.redes_sociais div a:hover {
+  color: #e7d78c;
+}
+
+@media screen and (max-width: 1280px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menuDesktop ul {
+    display: none;
+  }
+  .menuMobile {
+    position: fixed;
+    background-color: #393939;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    overflow-y: hidden;
+    height: 0;
+    transition: 1s;
+    z-index: 10;
+  }
+  .menuMobile ul {
+    display: none;
+    list-style-type: none;
+    text-align: center;
+  }
+  .menuMobile li {
+    padding: 3rem;
+  }
+  .menuMobile a {
+    color: #b8b8b8;
+    font-size: 3rem;
+    text-decoration: none;
+  }
+  .redes_sociais {
+    position: absolute;
+    right: 1rem;
+    bottom: 2rem;
+  }
+  .bars {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 10;
+  }
+  .bars span {
+    background-color: #b8b8b8;
+    width: 40px;
+    height: 2px;
+    margin: 10px 0;
+    display: block;
+    transition: 0.6s;
+  }
+}
+.activeMenu {
+  transition: 0.6s;
+}
+.activeMenu span:nth-child(2) {
+  width: 5px;
+  margin: 0 auto;
+  opacity: 0;
+}
+.activeMenu span:nth-child(1) {
+  transform: rotate(-45deg) translate(-10px, 9px);
+}
+.activeMenu span:nth-child(3) {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    height: 180px;
+  }
+  .logo img {
+    width: 140px;
+  }
+  .redes_sociais div a {
+    font-size: 3rem;
+  }
+}
+.call_header {
+  background-image: url("https://churchtechexpo.com.br/wp-content/uploads/2019/04/carolina-jacomin-615796-unsplash.jpg");
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.calls {
+  width: 95%;
+  overflow-y: hidden;
+  text-align: center;
+  position: relative;
+  padding: 4rem 0;
+}
+.calls h1 {
+  color: #fff;
+  font-size: 12rem;
+  padding: 2rem 0;
+}
+.calls h1 b {
+  color: #e7d78c;
+}
+.calls p {
+  color: #e7d78c;
+  font-size: 6rem;
+  width: 100%;
+  padding: 2rem 0;
+}
+.calls p strong {
+  color: #fff;
+}
+
+.cover_bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #393939;
+  height: 100%;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1280px) {
+  .calls {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .calls h1 {
+    font-size: 9rem;
+  }
+  .calls p {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 468px) {
+  .call_header {
+    height: 900px;
+  }
+  .calls h1 {
+    font-size: 6rem;
+  }
+  .calls p {
+    font-size: 2.5rem;
+  }
+}
+.come_worship {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #b8b8b8;
+  padding: 4rem;
+  border-top: 3px solid #fff;
+}
+
+.box_img {
+  background-image: url("../images/celular.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+}
+
+.box_messenger {
+  width: 50%;
+  text-align: center;
+  padding: 2rem;
+}
+.box_messenger h2, .box_messenger span, .box_messenger h3, .box_messenger b, .box_messenger p {
+  padding: 1rem 0;
+}
+.box_messenger h2 {
+  font-size: 4rem;
+  width: 100%;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: normal;
+}
+.box_messenger span {
+  color: #e7d78c;
+  font-size: 3rem;
+}
+.box_messenger h3 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #393939;
+}
+.box_messenger b {
+  color: #fff;
+  font-size: 3rem;
+  padding: 1rem;
+}
+.box_messenger p {
+  font-size: 3rem;
+  color: #393939;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1280px) {
+  .box_img {
+    max-width: 500px;
+  }
+  .box_messenger {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .come_worship {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 468px) {
+  .box_img {
+    height: 600px;
+  }
+  .box_messenger h2 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+  .box_messenger h3 {
+    font-size: 3rem;
+  }
+  .box_messenger span {
+    font-size: 2.5rem;
+  }
+  .box_messenger b {
+    font-size: 2rem;
+    display: block;
+  }
+  .box_messenger p {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+}
+footer {
+  background-color: #393939;
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+footer span:nth-last-child(2) {
+  color: #b8b8b8;
+  font-size: 2.2rem;
+  position: absolute;
+  bottom: 0.5rem;
+}
+footer #author {
+  color: #b8b8b8;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.endereco {
+  color: #b8b8b8;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.endereco p {
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.box_map {
+  margin-bottom: 2rem;
+}
+
+.redesSociaisFooter {
+  position: absolute;
+  top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.redesSociaisFooter span {
+  color: #fff;
+  font-size: 2rem;
+}
+.redesSociaisFooter a {
+  color: #b8b8b8;
+  font-size: 2.5rem;
+}
+.redesSociaisFooter a:hover {
+  color: #e7d78c;
+}
+
+@media screen and (max-width: 1280px) {
+  footer {
+    flex-direction: column;
+  }
+  .endereco p {
+    margin: 1rem 0;
+  }
+  .box_map {
+    position: relative;
+  }
+  #author {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .box_map {
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 280px) {
+  .box_map {
+    transform: scale(0.5);
+  }
+}
+.contribua {
+  background-color: #fff;
+}
+.contribua h3 {
+  font-size: 3rem;
+  color: #393939;
+  padding: 2rem;
+}
+
+.box_obra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ajudarObra {
+  text-align: center;
+  width: 50%;
+}
+.ajudarObra h2 {
+  font-size: 5rem;
+  padding: 2rem 0;
+  text-transform: uppercase;
+}
+.ajudarObra p {
+  margin: 0 auto;
+  width: 80%;
+  font-size: 2.1rem;
+}
+.ajudarObra p b {
+  font-size: 2.5rem;
+}
+.ajudarObra .conta_bancaria {
+  overflow-y: hidden;
+}
+.ajudarObra .conta_bancaria img {
+  width: 100%;
+  max-width: 300px;
+}
+.ajudarObra .pix {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ajudarObra .pix img {
+  width: 100px;
+  background-color: aliceblue;
+  padding: 1rem;
+  margin: 0 1rem;
+}
+.ajudarObra .pix label {
+  font-size: 2rem;
+  color: #ff9b0a;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+.ajudarObra .pix #copyPix {
+  font-size: 2rem;
+  margin: 1rem;
+  color: blue;
+  border: 0;
+  pointer-events: none;
+}
+.ajudarObra .pix #copyPix:focus {
+  outline: none;
+}
+.ajudarObra #copyPix {
+  cursor: pointer;
+}
+
+.img_obra {
+  position: relative;
+  width: 50%;
+  height: 1100px;
+  filter: grayscale(1);
+  background-position: center;
+  background-image: url("../images/igreja.jpeg");
+}
+
+.cover_obra {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(184, 184, 184, 0.1882352941);
+}
+
+@media screen and (max-width: 1280px) {
+  .pix {
+    width: 100%;
+    flex-direction: column;
+  }
+  .pix label {
+    margin: 2rem 0;
+  }
+  .pix #copyPix {
+    font-size: 4rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .ajudarObra {
+    width: 100%;
+  }
+  .box_obra {
+    flex-direction: column;
+  }
+  .img_obra {
+    width: 100%;
+  }
+}
+.lideres {
+  padding: 0 2rem;
+}
+
+.box_lideres {
+  min-height: 1900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.box_lideres h1 {
+  font-size: 4rem;
+  padding: 1rem 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e7d78c;
+}
+
+.box_lider {
+  width: 100%;
+  max-width: 1300px;
+  min-height: 250px;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  background-color: aliceblue;
+  margin: 1rem 0;
+}
+.box_lider img {
+  width: 140px;
+  height: 140px;
+  border: 3px solid #e7d78c;
+  border-radius: 50%;
+}
+
+.box_sobre {
+  width: 100%;
+}
+.box_sobre h2 {
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+.box_sobre span {
+  font-size: 2rem;
+  color: #ff9b0a;
+}
+.box_sobre p {
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: gray;
+}
+
+@media screen and (max-width: 1280px) {
+  .box_lideres {
+    min-height: 2000px;
+  }
+  .box_lider {
+    max-width: 1000px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .box_lideres {
+    min-height: 1750px;
+  }
+  .box_lider {
+    text-align: center;
+  }
+  .box_lider h2 {
+    font-size: 2.2rem;
+  }
+  .box_lider span {
+    font-size: 1.5rem;
+  }
+  .box_lider p {
+    font-size: 1.5rem;
+  }
+  .box_lider img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .box_lideres {
+    min-height: 1850px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .box_lideres {
+    min-height: 1950px;
+  }
+}
+@media screen and (max-width: 445px) {
+  .box_lideres {
+    min-height: 2030px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .box_lideres {
+    min-height: 2150px;
+  }
+}
+.box_somos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+  margin: 1rem auto;
+  gap: 1rem;
+  min-height: 1300px;
+  background-color: #fff;
+}
+.box_somos h1 {
+  display: block;
+  text-align: center;
+  font-size: 4rem;
+  padding: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e7d78c;
+}
+.box_somos img {
+  width: 320px;
+  background-color: #e7d78c;
+  padding: 4px;
+  margin: 1rem 0;
+}
+.box_somos p {
+  font-size: 2rem;
+  color: #b8b8b8;
+  width: 100%;
+  text-align: justify;
+}
+.box_somos p b {
+  font-size: 2.5rem;
+  color: #ff9b0a;
+}
+
+@media screen and (max-width: 768px) {
+  .box_somos {
+    min-height: 1250px;
+  }
+  .box_somos h1 {
+    font-size: 3rem;
+  }
+  .box_somos img {
+    width: 250px;
+    margin: 0 auto;
+  }
+  .box_somos p {
+    font-size: 1.7rem;
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 480px) {
+  .box_somos {
+    min-height: 1350px;
+  }
+  .box_somos img {
+    width: 220px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .box_somos {
+    min-height: 1430px;
+  }
+}
+.contato {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 3rem;
+}
+.contato h1 {
+  text-align: center;
+  font-size: 5rem;
+  padding: 1rem;
+  color: #e7d78c;
+}
+.contato h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #b8b8b8;
+  padding: 2rem 0;
+}
+
+.whatsContato {
+  width: 100%;
+  font-size: 2rem;
+  padding: 2rem;
+  color: #fff;
+  background-color: #00a884;
+}
+
+.emailContato {
+  max-width: 600px;
+  padding: 2rem;
+  width: 100%;
+  background-color: #b8b8b8;
+}
+.emailContato p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.emailContato span {
+  font-size: 1.4rem;
+  color: #393939;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,19 @@
+.palhetas-de-cores{
+     color: #ff9b0a;
+     color: #393939;
+     color: #b8b8b8;
+     color: #e7d78c;
+ }
+--------------------------------
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+     font-family: 'Roboto', sans-serif;
+     font-size: 62.5%;
+ }
